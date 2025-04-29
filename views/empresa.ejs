@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Veterinária</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f1ea;
+        }
+
+        header {
+            background-color: #8fcbbc;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-family: 'Georgia', serif;
+            margin: 0;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #d7eee7;
+            padding: 10px 20px;
+        }
+
+        .nav-left {
+            display: flex;
+            gap: 20px;
+        }
+
+        .icon {
+            color: #3e3e3e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .icon:hover {
+            color: #1b7264;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            width: 800px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #e6e6fa;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .form-group select {
+            height: 45px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .alert {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            display: none;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #3e3e3e;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Clínica Veterinária Vida Animal</h1>
+</header>
+
+<div class="nav-bar">
+    <nav class="nav-left">
+        <a href="/sobre/indexsobre" class="icon">Sobre</a>          
+        <a href="/feedbacks/indexfeedbacks" class="icon">Cadastro</a>
+        <a href="/empresas/indexemp" class="icon">Consulta</a>             
+        <a href="/consulta/indexconsulta" class="icon">Consultas Marcadas</a>                   
+    </nav>
+</div>
+
+<main>
+    <section class="main-content">
+        <div class="content">
+            <h2 style="margin-top: 0;">Solicitar Consulta</h2>
+            <form action="/consultas/agendar" method="post">
+                <div class="alert" style="<%= mensagem ? 'display: block;' : 'display: none;' %>">
+                    <%= mensagem %>
+                </div>
+
+                <div class="form-group">
+                    <label for="nome_tutor">Nome do Tutor:</label>
+                    <input type="text" id="nome_tutor" name="nome_tutor" required placeholder="Ex: Ana Paula Silva">
+                </div>
+                
+                <div class="form-group">
+                    <label for="cpf_tutor">Descrição:</label>
+                    <input type="text" id="cpf_tutor" name="Descrição" required placeholder="Ex:Garfield está com febre">
+                </div>
+
+                
+                <button type="submit" class="btn">Agendar Consulta</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Clínica Veterinária Vida Animal. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Criar Conta</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f1ea;
+    }
+
+    header {
+      background-color: #8fcbbc;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-family: 'Georgia', serif;
+      margin: 0;
+    }
+
+   
+
+    .icon {
+      color: #3e3e3e;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .icon:hover {
+      color: #1b7264;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      margin: 80px auto 120px auto;
+    }
+
+    h2 {
+      color: #1b7264;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #3e3e3e;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f0f9f7;
+      font-size: 16px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #8fcbbc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #1b7264;
+    }
+
+    .link {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .link a {
+      color: #1b7264;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #3e3e3e;
+      color: white;
+      text-align: center;
+      padding: 12px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <h1>Clínica Veterinária Vida Animal</h1>
+    </header>
+
+
+
+<div class="container">
+  <h2>Criar Conta</h2>
+  <form action="criarConta" method="post">
+    <div class="form-group">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" placeholder="Nome completo" required>
+    </div>
+    <div class="form-group">
+      <label for="age">Idade:</label>
+      <input type="number" id="age" name="age" placeholder="Idade" required>
+    </div>
+    <div class="form-group">
+      <label for="new-username">Usuário:</label>
+      <input type="text" id="usuario" name="usuario" placeholder="Usuário" required>
+    </div>
+    <div class="form-group">
+      <label for="new-password">Senha:</label>
+      <input type="password" id="senha" name="senha" placeholder="Senha" required>
+    </div>
+    <div class="form-group">
+      <label for="confirm-password">Confirmar Senha:</label>
+      <input type="password" id="confirma" name="confirma" placeholder="Confirmar Senha" required>
+    </div>
+    <button type="submit" class="btn" onclick="valida(event)">Registrar</button>
+
+    <script>
+      function valida(event) {
+        var s = document.getElementById('senha').value;
+        var c = document.getElementById('confirma').value;
+        if (s !== c) {
+          event.preventDefault();
+          window.alert("A senha digitada no campo de confirmação é diferente da senha digitada");
+        }
+      }
+    </script>
+  </form>
+
+  <div class="link">
+    <p>Já tem uma conta? <a href="/">Fazer login</a></p>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 Auto Feed. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>

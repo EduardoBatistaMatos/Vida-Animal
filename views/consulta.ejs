@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= title %></title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f1ea; 
+        }
+
+        header {
+            background-color: #8fcbbc;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-family: 'Georgia', serif;
+            margin: 0;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #d7eee7; 
+            padding: 10px 20px; 
+        }
+
+        .nav-left {
+            display: flex;
+            gap: 20px;
+        }
+
+        .icon {
+            color: #3e3e3e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .icon:hover {
+            color: #1b7264;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .image-text-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .image-wrapper {
+            flex: 1 1 50%;
+            padding: 10px;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .text-wrapper {
+            flex: 1 1 50%;
+            padding: 20px;
+        }
+
+        .text-wrapper h2 {
+            margin-top: 0;
+            color: #1b7264;
+        }
+
+        footer {
+            background-color: #3e3e3e;
+            color: white;
+            text-align: center;
+            padding: 12px 0;
+            position: fixed; 
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Clínica Veterinária Vida Animal</h1>
+    </header>
+    
+<div class="nav-bar">
+    <nav class="nav-left">
+        <a href="/sobre/indexsobre" class="icon">Sobre</a>          
+        <a href="/feedbacks/indexfeedbacks" class="icon">Cadastro</a>
+        <a href="/empresas/indexemp" class="icon">Consulta</a>             
+        <a href="/consulta/indexconsulta" class="icon">Consultas Marcadas</a>                   
+    </nav>
+</div>
+
+<main>
+    <section class="main-content">
+        <div class="content">
+            <h2 style="margin-top: 0;">Consultas</h2>
+
+            <!-- Exibindo os feedbacks passados do controller -->
+            <% if (feedbacks && feedbacks.length > 0) { %>
+                <ul>
+                    <% feedbacks.forEach(function(feedback) { %>
+                        <li>
+                            <strong><%= feedback.razao_social %>:</strong> <%= feedback.feedback %>
+                        </li>
+                    <% }) %>
+                </ul>
+            <% } else { %>
+                <p>Não há feedbacks disponíveis.</p>
+            <% } %>
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Auto Feed. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
